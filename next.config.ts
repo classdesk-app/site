@@ -25,11 +25,11 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   experimental: {
-    turbo: {
-      root: __dirname,
-    },
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
+  turbopack: {
+    root: __dirname,
   },
   compress: true,
   poweredByHeader: false,
