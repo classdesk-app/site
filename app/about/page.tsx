@@ -59,7 +59,7 @@ export default function AboutPage() {
                   and academic operations.
                 </p>
                 <p className="text-gray-600 dark:text-white/70">
-                  We're committed to making NAAC and NBA accreditation processes seamless, transparent, 
+                  We&apos;re committed to making NAAC and NBA accreditation processes seamless, transparent, 
                   and manageable for educational institutions of all sizes across India.
                 </p>
               </section>
@@ -101,8 +101,8 @@ export default function AboutPage() {
                       Scalable Platform
                     </h3>
                     <p className="text-gray-600 dark:text-white/70">
-                      Whether you're a small college or a large university, Classdesk scales 
-                      to meet your institution's unique needs.
+                      Whether you&apos;re a small college or a large university, Classdesk scales 
+                      to meet your institution&apos;s unique needs.
                     </p>
                   </div>
                 </div>
@@ -148,7 +148,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-gray-600 dark:text-white/70 mb-6">
                   Ready to transform your college management processes? Join the waitlist 
-                  to be among the first to experience Classdesk's comprehensive solution 
+                  to be among the first to experience Classdesk&apos;s comprehensive solution 
                   for NAAC and NBA accreditation.
                 </p>
                 <div className="bg-indigo-50 dark:bg-indigo-500/10 rounded-lg p-6">
@@ -156,7 +156,7 @@ export default function AboutPage() {
                     Beta Launch: Q4 2025
                   </p>
                   <p className="text-indigo-600 dark:text-indigo-300 text-sm mt-2">
-                    Be the first to experience Classdesk's revolutionary college management platform.
+                    Be the first to experience Classdesk&apos;s revolutionary college management platform.
                   </p>
                 </div>
               </section>

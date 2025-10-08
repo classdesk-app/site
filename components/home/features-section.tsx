@@ -128,7 +128,7 @@ export const FeaturesSection = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Attendance Management</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Track student attendance with ease using Classdesk's automated attendance system and generate comprehensive reports for NAAC accreditation.</p>
+              <p className="text-sm text-gray-600 dark:text-white/60">Track student attendance with ease using Classdesk&apos;s automated attendance system and generate comprehensive reports for NAAC accreditation.</p>
             </div>
           </motion.div>
 
@@ -184,7 +184,7 @@ export const FeaturesSection = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Marksheets & Reports</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Create and manage student marksheets efficiently with Classdesk's built-in validation system for NBA accreditation compliance.</p>
+              <p className="text-sm text-gray-600 dark:text-white/60">Create and manage student marksheets efficiently with Classdesk&apos;s built-in validation system for NBA accreditation compliance.</p>
             </div>
           </motion.div>
 
@@ -235,7 +235,7 @@ export const FeaturesSection = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Session Planning</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Organize academic sessions, timetables, and scheduling seamlessly with Classdesk's comprehensive session management tools.</p>
+              <p className="text-sm text-gray-600 dark:text-white/60">Organize academic sessions, timetables, and scheduling seamlessly with Classdesk&apos;s comprehensive session management tools.</p>
             </div>
           </motion.div>
 
@@ -294,7 +294,7 @@ export const FeaturesSection = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Analytics & Insights</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Get actionable insights into student performance and college operations with Classdesk's real-time analytics dashboard for data-driven decisions.</p>
+              <p className="text-sm text-gray-600 dark:text-white/60">Get actionable insights into student performance and college operations with Classdesk&apos;s real-time analytics dashboard for data-driven decisions.</p>
             </div>
           </motion.div>
 
@@ -410,7 +410,7 @@ export const FeaturesSection = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Role Management</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Configure user roles and permissions with Classdesk's granular access control system for secure college administration.</p>
+              <p className="text-sm text-gray-600 dark:text-white/60">Configure user roles and permissions with Classdesk&apos;s granular access control system for secure college administration.</p>
             </div>
           </motion.div>
         </div>
