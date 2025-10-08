@@ -144,13 +144,13 @@ export default function HeroSection() {
                 <section className="pb-16 pt-16 md:pb-32">
                     <div className="relative m-auto max-w-5xl px-6">
                         <p className="text-center text-sm text-gray-600 dark:text-white/60 mb-8">
-                            Trusted by colleges and universities across India
+                            Empowering colleges and universities across India
                         </p>
                         <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">100+</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">Colleges Ready</p>
+                                    <p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">Free</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">Onboarding Process</p>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center">
