@@ -29,11 +29,11 @@ export const FeaturesSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Everything you need to manage your college
+            Everything you need to manage your college with Classdesk
           </h2>
           <p className="text-lg text-gray-600 dark:text-white/70 max-w-2xl mx-auto">
-            From attendance tracking to analytics, Classdesk has all the tools
-            to modernize your administration.
+            From attendance tracking to analytics, the Classdesk college management system has all the tools
+            to modernize your university administration and streamline NAAC & NBA accreditation.
           </p>
         </motion.div>
 
@@ -127,8 +127,8 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Attendance Management</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Track student attendance with ease and generate automated reports.</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Attendance Management</h3>
+              <p className="text-sm text-gray-600 dark:text-white/60">Track student attendance with ease using Classdesk's automated attendance system and generate comprehensive reports for NAAC accreditation.</p>
             </div>
           </motion.div>
 
@@ -183,8 +183,8 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Marksheets & Reports</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Create and manage student marksheets efficiently with built-in validation.</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Marksheets & Reports</h3>
+              <p className="text-sm text-gray-600 dark:text-white/60">Create and manage student marksheets efficiently with Classdesk's built-in validation system for NBA accreditation compliance.</p>
             </div>
           </motion.div>
 
@@ -234,8 +234,8 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Session Planning</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Organize academic sessions, timetables, and scheduling seamlessly.</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Session Planning</h3>
+              <p className="text-sm text-gray-600 dark:text-white/60">Organize academic sessions, timetables, and scheduling seamlessly with Classdesk's comprehensive session management tools.</p>
             </div>
           </motion.div>
 
@@ -293,8 +293,8 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Analytics & Insights</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Get actionable insights into student performance and college operations with real-time dashboards.</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Analytics & Insights</h3>
+              <p className="text-sm text-gray-600 dark:text-white/60">Get actionable insights into student performance and college operations with Classdesk's real-time analytics dashboard for data-driven decisions.</p>
             </div>
           </motion.div>
 
@@ -409,8 +409,8 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Role Management</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Configure user roles and permissions with granular access control.</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Classdesk Role Management</h3>
+              <p className="text-sm text-gray-600 dark:text-white/60">Configure user roles and permissions with Classdesk's granular access control system for secure college administration.</p>
             </div>
           </motion.div>
         </div>

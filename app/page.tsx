@@ -1,6 +1,5 @@
 "use client"
 
-import { Header } from "@/components/header"
 import HeroSection from "@/components/hero-section"
 import { Background } from "@/components/home/background"
 import { FeaturesSection } from "@/components/home/features-section"
@@ -11,7 +10,6 @@ export default function HomePage() {
   return (
     <div className="min-h-screen w-full bg-white dark:bg-black relative">
       <Background />
-      <Header />
 
       <main className="relative z-10 text-gray-900 dark:text-white">
         <HeroSection />

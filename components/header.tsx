@@ -6,9 +6,11 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Logo } from "@/components/logo"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Menu, X } from "lucide-react"
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +20,13 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const navigation = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Features", href: "/features" },
+    { name: "Roadmap", href: "/roadmap" },
+  ]
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -25,7 +34,7 @@ export function Header() {
       transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black/50 dark:bg-black/50 bg-white/80 backdrop-blur-xl shadow-lg"
+          ? "bg-white/80 dark:bg-black/50 backdrop-blur-xl shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -39,7 +48,7 @@ export function Header() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-1"
+            className="flex"
           >
             <Link href="/" className="flex items-center gap-2 group">
               <Logo className="h-8 w-8" />
@@ -49,27 +58,77 @@ export function Header() {
             </Link>
           </motion.div>
 
+          {/* Desktop Navigation */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="hidden md:flex items-center gap-8"
+          >
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-medium text-gray-700 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </motion.div>
+
           {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex items-center gap-2"
+            className="flex items-center gap-4 ml-6"
           >
             <ThemeToggle />
+            <Button asChild size="sm" className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white hidden sm:flex">
+              <a href="#waitlist">Join Waitlist</a>
+            </Button>
+            
+            {/* Mobile menu button */}
             <Button
-              asChild
               variant="ghost"
               size="sm"
-              className="text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 hover:text-gray-900 dark:hover:text-white hidden sm:flex"
+              className="md:hidden text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <Link href="/roadmap">Roadmap</Link>
-            </Button>
-            <Button asChild size="sm" className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white">
-              <a href="#waitlist">Join Waitlist</a>
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </motion.div>
         </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-t border-gray-200 dark:border-white/10 bg-white/80 dark:bg-black/80 backdrop-blur-xl"
+          >
+            <div className="px-6 py-4 space-y-4">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block text-sm font-medium text-gray-700 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Button asChild size="sm" className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white w-full">
+                <a href="#waitlist" onClick={() => setMobileMenuOpen(false)}>Join Waitlist</a>
+              </Button>
+            </div>
+          </motion.div>
+        )}
       </nav>
     </motion.header>
   )

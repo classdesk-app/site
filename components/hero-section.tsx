@@ -68,7 +68,7 @@ export default function HeroSection() {
                                     delay={0.5}
                                     as="p"
                                     className="mx-auto mt-8 max-w-2xl text-balance text-lg text-gray-600 dark:text-white/70">
-                                    Accelerate NAAC & NBA readiness—centralize attendance, marksheets, and sessions with automated reporting.
+                                    Accelerate NAAC & NBA readiness with Classdesk—centralize attendance, marksheets, and sessions with automated reporting for colleges and universities.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -144,7 +144,7 @@ export default function HeroSection() {
                 <section className="pb-16 pt-16 md:pb-32">
                     <div className="relative m-auto max-w-5xl px-6">
                         <p className="text-center text-sm text-gray-600 dark:text-white/60 mb-8">
-                            Empowering colleges and universities across India
+                            Empowering colleges and universities across India with Classdesk
                         </p>
                         <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
                             <div className="flex items-center justify-center">

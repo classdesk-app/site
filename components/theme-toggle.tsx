@@ -15,9 +15,8 @@ export function ThemeToggle() {
   if (!mounted) {
     return (
       <Button
-        variant="ghost"
-        size="sm"
-        className="text-foreground hover:bg-accent"
+        size="icon"
+        className="text-foreground hover:bg-accent rounded-lg h-8 w-8"
         disabled
       >
         <Sun className="h-5 w-5" />
@@ -34,10 +33,10 @@ function ThemeToggleClient() {
 
   return (
     <Button
-      variant="ghost"
-      size="sm"
+    variant="outline"
+      size="icon"
       onClick={toggleTheme}
-      className="text-foreground hover:bg-accent"
+      className="hover:bg-accent rounded-lg h-8 w-8"
     >
       {theme === "dark" ? (
         <Sun className="h-5 w-5" />
