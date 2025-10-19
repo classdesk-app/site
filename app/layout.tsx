@@ -134,16 +134,19 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add your Google Search Console verification code here
+    // IMPORTANT: Add your Google Search Console verification code here
+    // This is REQUIRED for Google to trust your site for indexing
     // Steps to get verification code:
     // 1. Go to https://search.google.com/search-console
-    // 2. Add property (classdesk.app)
-    // 3. Choose "HTML tag" method
-    // 4. Copy the content value from the meta tag
-    // 5. Add it below like: google: "abc123xyz",
+    // 2. Add property (classdesk.app) if not already added
+    // 3. Go to Settings > Ownership verification
+    // 4. Choose "HTML tag" method
+    // 5. Copy ONLY the content value from the meta tag (the code between content="...")
+    // 6. Uncomment the line below and paste your code
+    // Example: google: "abc123xyz456def789",
+    
     // google: "your-google-verification-code-here",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
+    // After adding, rebuild and redeploy your site
   },
   other: {
     "apple-mobile-web-app-capable": "yes",
@@ -308,6 +311,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Explicit robots meta tag for Google indexing */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        
+        {/* Explicit canonical URL */}
+        <link rel="canonical" href="https://classdesk.app/" />
+        
+        {/* Favicons and manifest */}
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -315,6 +326,8 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4f46e5" />
         <meta name="msapplication-TileColor" content="#4f46e5" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+        
+        {/* Structured data for better SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
