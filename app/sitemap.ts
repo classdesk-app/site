@@ -4,7 +4,7 @@ export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://classdesk.app'
-  const currentDate = new Date('2025-01-19') // Update this date when content changes
+  const currentDate = new Date('2025-10-19') // Update this date when content changes
   
   return [
     {

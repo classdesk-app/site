@@ -134,8 +134,14 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Add your verification codes here when you have them
-    // google: "your-google-verification-code",
+    // Add your Google Search Console verification code here
+    // Steps to get verification code:
+    // 1. Go to https://search.google.com/search-console
+    // 2. Add property (classdesk.app)
+    // 3. Choose "HTML tag" method
+    // 4. Copy the content value from the meta tag
+    // 5. Add it below like: google: "abc123xyz",
+    // google: "your-google-verification-code-here",
     // yandex: "your-yandex-verification-code",
     // bing: "your-bing-verification-code",
   },

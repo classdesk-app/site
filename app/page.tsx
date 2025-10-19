@@ -1,5 +1,3 @@
-"use client"
-
 import HeroSection from "@/components/hero-section"
 import { Background } from "@/components/home/background"
 import { FeaturesSection } from "@/components/home/features-section"
