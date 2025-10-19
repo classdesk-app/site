@@ -42,7 +42,6 @@ For the Bigin CRM integration to work, you need to set up environment variables.
 ```env
 BIGIN_CLIENT_ID=your_client_id
 BIGIN_CLIENT_SECRET=your_client_secret
-BIGIN_REFRESH_TOKEN=your_refresh_token
 ```
 
 See [BIGIN_SETUP.md](./BIGIN_SETUP.md) for detailed instructions on obtaining these credentials.

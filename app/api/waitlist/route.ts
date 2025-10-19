@@ -4,12 +4,15 @@ interface WaitlistFormData {
   fullName: string;
   collegeName: string;
   email: string;
+  phoneNumber?: string;
   role: string;
 }
 
 interface BiginTokenResponse {
   access_token: string;
   expires_in: number;
+  api_domain: string;
+  token_type: string;
 }
 
 interface BiginAccount {
@@ -35,25 +38,18 @@ interface BiginCreateResponse {
   }>;
 }
 
-const BIGIN_API_BASE = 'https://www.zohoapis.com/bigin/v2';
-const BIGIN_ACCOUNTS_URL = 'https://accounts.zoho.com/oauth/v2/token';
+const BIGIN_ACCOUNTS_URL = 'https://accounts.zoho.in/oauth/v2/token';
 
 export async function POST(request: NextRequest) {
   try {
+    const body = await request.json();
     // Parse form data
-    const formData: WaitlistFormData = await request.json();
-
-    // Validate required fields
-    if (!formData.fullName || !formData.email || !formData.collegeName || !formData.role) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
-    }
+    const formData: WaitlistFormData = body;
+    console.log('Form data:', formData);
 
     // Check environment variables
-    if (!process.env.BIGIN_CLIENT_ID || !process.env.BIGIN_CLIENT_SECRET || !process.env.BIGIN_REFRESH_TOKEN) {
-      console.error('Missing Bigin environment variables');
+    if (!process.env.BIGIN_CLIENT_ID || !process.env.BIGIN_CLIENT_SECRET) {
+      console.log('Missing Bigin environment variables');
       return NextResponse.json(
         { error: 'Server configuration error' },
         { status: 500 }
@@ -61,48 +57,43 @@ export async function POST(request: NextRequest) {
     }
 
     // Get OAuth access token
-    const accessToken = await getAccessToken();
-
+    const tokenData = await getAccessToken();
+    console.log('Access token:', tokenData.access_token);
+    console.log('API Domain:', tokenData.api_domain);
+    
+    const BIGIN_API_BASE = `${tokenData.api_domain}/bigin/v2`;
+    
     // Step 1: Find or create Account (College/University)
-    const accountId = await findOrCreateAccount(formData.collegeName, accessToken);
-
+    const accountId = await findOrCreateAccount(formData.collegeName, tokenData.access_token, BIGIN_API_BASE);
+    console.log('Account ID:', accountId);
+    
     // Step 2: Split name into first and last
     const { firstName, lastName } = splitName(formData.fullName);
 
-    // Step 3: Create Lead
-    const leadResult = await createLead(
-      {
-        firstName,
-        lastName,
-        email: formData.email,
-        role: formData.role,
-        collegeName: formData.collegeName,
-        accountId,
-      },
-      accessToken
-    );
-
-    // Step 4: Create Contact
+    // Step 3: Create Contact
     const contactResult = await createContact(
       {
         firstName,
         lastName,
         email: formData.email,
+        phoneNumber: formData.phoneNumber,
         role: formData.role,
         collegeName: formData.collegeName,
         accountId,
       },
-      accessToken
+      tokenData.access_token,
+      BIGIN_API_BASE
     );
 
     return NextResponse.json({
       success: true,
-      message: 'Successfully added to waitlist and CRM',
-      lead: leadResult,
+      message: 'Successfully added to waitlist',
       contact: contactResult,
     });
   } catch (error) {
-    console.error('Error processing waitlist submission:', error);
+    console.log('Error processing waitlist submission:', error);
+    console.log('Error details:', error instanceof Error ? error.message : error);
+    console.log('Stack trace:', error instanceof Error ? error.stack : 'No stack trace');
     return NextResponse.json(
       {
         error: 'Failed to process request',
@@ -116,7 +107,7 @@ export async function POST(request: NextRequest) {
 /**
  * Get OAuth access token using refresh token
  */
-async function getAccessToken(): Promise<string> {
+async function getAccessToken(): Promise<BiginTokenResponse> {
   const params = new URLSearchParams({
     refresh_token: process.env.BIGIN_REFRESH_TOKEN!,
     client_id: process.env.BIGIN_CLIENT_ID!,
@@ -124,35 +115,39 @@ async function getAccessToken(): Promise<string> {
     grant_type: 'refresh_token',
   });
 
+  console.log('Requesting access token...');
   const response = await fetch(`${BIGIN_ACCOUNTS_URL}?${params.toString()}`, {
     method: 'POST',
   });
 
   if (!response.ok) {
     const errorText = await response.text();
+    console.log('Access token error response:', errorText);
     throw new Error(`Failed to get access token: ${response.statusText} - ${errorText}`);
   }
 
   const data: BiginTokenResponse = await response.json();
-  return data.access_token;
+  console.log('Access token obtained successfully, expires in:', data.expires_in, 'seconds');
+  return data;
 }
 
 /**
  * Find existing account or create new one
  */
-async function findOrCreateAccount(collegeName: string, accessToken: string): Promise<string> {
+async function findOrCreateAccount(collegeName: string, accessToken: string, apiBase: string): Promise<string> {
   // Search for existing account
-  const searchUrl = `${BIGIN_API_BASE}/Accounts/search?criteria=(Account_Name:equals:${encodeURIComponent(
+  const searchUrl = `${apiBase}/Accounts/search?criteria=(Account_Name:equals:${encodeURIComponent(
     collegeName
   )})`;
 
+  console.log('Searching for account at:', searchUrl);
   const searchResponse = await fetch(searchUrl, {
     headers: {
       Authorization: `Zoho-oauthtoken ${accessToken}`,
     },
   });
 
-  if (searchResponse.ok) {
+  if (searchResponse.ok && searchResponse.body) {
     const searchData: BiginSearchResponse = await searchResponse.json();
     if (searchData.data && searchData.data.length > 0) {
       return searchData.data[0].id;
@@ -160,7 +155,7 @@ async function findOrCreateAccount(collegeName: string, accessToken: string): Pr
   }
 
   // Create new account if not found
-  const createResponse = await fetch(`${BIGIN_API_BASE}/Accounts`, {
+  const createResponse = await fetch(`${apiBase}/Accounts`, {
     method: 'POST',
     headers: {
       Authorization: `Zoho-oauthtoken ${accessToken}`,
@@ -191,52 +186,6 @@ async function findOrCreateAccount(collegeName: string, accessToken: string): Pr
 }
 
 /**
- * Create Lead in Bigin
- */
-async function createLead(
-  data: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    role: string;
-    collegeName: string;
-    accountId: string;
-  },
-  accessToken: string
-): Promise<any> {
-  const response = await fetch(`${BIGIN_API_BASE}/Leads`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Zoho-oauthtoken ${accessToken}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      data: [
-        {
-          First_Name: data.firstName,
-          Last_Name: data.lastName,
-          Email: data.email,
-          Designation: data.role,
-          Company: data.collegeName,
-          Account_Name: {
-            id: data.accountId,
-          },
-          Lead_Source: 'Website Waitlist',
-          Description: `Waitlist signup - Role: ${data.role}, College: ${data.collegeName}`,
-        },
-      ],
-    }),
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Failed to create lead: ${response.statusText} - ${errorText}`);
-  }
-
-  return await response.json();
-}
-
-/**
  * Create Contact in Bigin
  */
 async function createContact(
@@ -244,37 +193,61 @@ async function createContact(
     firstName: string;
     lastName: string;
     email: string;
+    phoneNumber?: string;
     role: string;
     collegeName: string;
     accountId: string;
   },
-  accessToken: string
-): Promise<any> {
-  const response = await fetch(`${BIGIN_API_BASE}/Contacts`, {
+  accessToken: string,
+  apiBase: string
+): Promise<BiginCreateResponse> {
+  const contactUrl = `${apiBase}/Contacts`;
+  console.log('Creating contact at:', contactUrl);
+  
+  const contactData: {
+    First_Name: string;
+    Last_Name: string;
+    Email: string;
+    Phone?: string;
+    Title: string;
+    Account_Name: { id: string };
+    Contact_Source: string;
+    Description: string;
+  } = {
+    First_Name: data.firstName,
+    Last_Name: data.lastName,
+    Email: data.email,
+    Title: data.role,
+    Account_Name: {
+      id: data.accountId,
+    },
+    Contact_Source: 'Website Waitlist',
+    Description: `Waitlist signup - Role: ${data.role}, College: ${data.collegeName}`,
+  };
+
+  // Add phone number if provided
+  if (data.phoneNumber) {
+    contactData.Phone = data.phoneNumber;
+  }
+  
+  const requestBody = {
+    data: [contactData],
+  };
+  
+  console.log('Contact request body:', JSON.stringify(requestBody, null, 2));
+  
+  const response = await fetch(contactUrl, {
     method: 'POST',
     headers: {
       Authorization: `Zoho-oauthtoken ${accessToken}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      data: [
-        {
-          First_Name: data.firstName,
-          Last_Name: data.lastName,
-          Email: data.email,
-          Title: data.role,
-          Account_Name: {
-            id: data.accountId,
-          },
-          Contact_Source: 'Website Waitlist',
-          Description: `Waitlist signup - Role: ${data.role}, College: ${data.collegeName}`,
-        },
-      ],
-    }),
+    body: JSON.stringify(requestBody),
   });
 
   if (!response.ok) {
     const errorText = await response.text();
+    console.log('Contact creation failed. Status:', response.status, 'Response:', errorText);
     throw new Error(`Failed to create contact: ${response.statusText} - ${errorText}`);
   }
 

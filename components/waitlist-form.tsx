@@ -33,6 +33,7 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
+  phoneNumber: z.string().optional().or(z.literal("")),
   role: z.enum(["Administrator", "Faculty", "Staff", "Other"], {
     message: "Please select a role.",
   }),
@@ -49,6 +50,7 @@ export function WaitlistForm() {
       fullName: "",
       collegeName: "",
       email: "",
+      phoneNumber: "",
       role: undefined,
     },
   })
@@ -122,6 +124,19 @@ export function WaitlistForm() {
               <FormLabel>Work Email</FormLabel>
               <FormControl>
                 <Input type="email" placeholder="john.doe@university.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phoneNumber"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone Number <span className="text-gray-500 text-sm">(Optional)</span></FormLabel>
+              <FormControl>
+                <Input type="tel" placeholder="+1 (555) 123-4567" {...field} value={field.value || ""} />
               </FormControl>
               <FormMessage />
             </FormItem>
