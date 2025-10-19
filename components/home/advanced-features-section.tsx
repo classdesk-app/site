@@ -265,7 +265,7 @@ export const AdvancedFeaturesSection = () => {
           </h2>
           <p className="text-xl text-gray-600 dark:text-white/70 max-w-3xl mx-auto leading-relaxed">
             Explore all the features planned for Classdesk. From core department management 
-            to AI-powered analytics, discover how we're building the future of college administration.
+            to AI-powered analytics, discover how we&apos;re building the future of college administration.
           </p>
         </motion.div>
 

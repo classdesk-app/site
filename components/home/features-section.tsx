@@ -249,7 +249,7 @@ export const FeaturesSection = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Data That Drives Decisions</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Real-time dashboards show exactly what's working and what's not. Identify at-risk students early and boost your institution's performance metrics.</p>
+              <p className="text-sm text-gray-600 dark:text-white/60">Real-time dashboards show exactly what&apos;s working and what&apos;s not. Identify at-risk students early and boost your institution&apos;s performance metrics.</p>
             </div>
           </motion.div>
 
