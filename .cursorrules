@@ -1,7 +1,0 @@
-# .cursorrules
-
-rules:
-  # Always use Bash for shell commands
-  - pattern: ".*"
-    terminal:
-      shell: "/bin/bash"
