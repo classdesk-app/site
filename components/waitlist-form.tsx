@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
+import { useState } from "react"
 import * as z from "zod"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -40,6 +41,8 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>
 
 export function WaitlistForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -50,12 +53,36 @@ export function WaitlistForm() {
     },
   })
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data)
-    toast.success("You've been added to the waitlist 🎉", {
-      description: "We'll reach out soon with early access details.",
-    })
-    form.reset()
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true)
+    
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to submit form')
+      }
+
+      toast.success("You've been added to the waitlist 🎉", {
+        description: "We'll reach out soon with early access details.",
+      })
+      form.reset()
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      toast.error('Something went wrong', {
+        description: error instanceof Error ? error.message : 'Please try again later.',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -123,8 +150,12 @@ export function WaitlistForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 font-semibold py-2 rounded-md transition-colors">
-          Join Waitlist
+        <Button 
+          type="submit" 
+          disabled={isSubmitting}
+          className="w-full bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 font-semibold py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? 'Submitting...' : 'Join Waitlist'}
         </Button>
       </form>
     </Form>
