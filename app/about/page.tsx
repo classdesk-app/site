@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Background } from "@/components/home/background";
+import { Footer } from "@/components/home/footer";
 
 export const metadata: Metadata = {
   title: "About Classdesk - College Management System for NAAC & NBA Accreditation",
@@ -142,7 +143,7 @@ export default function AboutPage() {
                 </p>
               </section>
 
-              <section className="overflow-hidden rounded-xl bg-gradient-to-r from-indigo-50 to-blue-50 dark:from-indigo-500/10 dark:to-blue-500/10 backdrop-blur-sm border border-gray-100 dark:border-white/10 p-8">
+              <section className="overflow-hidden rounded-xl bg-gray-50 dark:bg-white/5 backdrop-blur-sm border border-gray-200 dark:border-white/10 p-8">
                 <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
                   Get Started with Classdesk
                 </h2>
@@ -151,11 +152,11 @@ export default function AboutPage() {
                   to be among the first to experience Classdesk&apos;s comprehensive solution 
                   for NAAC and NBA accreditation.
                 </p>
-                <div className="bg-indigo-50 dark:bg-indigo-500/10 rounded-lg p-6">
-                  <p className="text-indigo-800 dark:text-indigo-200 font-medium">
+                <div className="bg-gray-100 dark:bg-white/10 rounded-lg p-6">
+                  <p className="text-gray-900 dark:text-white font-medium">
                     Beta Launch: Q4 2025
                   </p>
-                  <p className="text-indigo-600 dark:text-indigo-300 text-sm mt-2">
+                  <p className="text-gray-700 dark:text-gray-300 text-sm mt-2">
                     Be the first to experience Classdesk&apos;s revolutionary college management platform.
                   </p>
                 </div>
@@ -164,6 +165,8 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }

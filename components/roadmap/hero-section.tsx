@@ -26,7 +26,7 @@ export const HeroSection = () => {
         className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6"
         variants={fadeInUp}
       >
-        <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
+        <span className="text-gray-900 dark:text-white">
           Product Roadmap
         </span>
       </motion.h1>

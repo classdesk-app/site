@@ -123,7 +123,7 @@ export function WaitlistForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-md transition-colors">
+        <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 font-semibold py-2 rounded-md transition-colors">
           Join Waitlist
         </Button>
       </form>

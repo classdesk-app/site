@@ -9,7 +9,7 @@ export const Footer = () => {
           <div className="flex items-center gap-2">
             <a
               href="mailto:hello@classdesk.app"
-              className="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+              className="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               hello@classdesk.app
             </a>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Background } from "@/components/home/background";
 import { AdvancedFeaturesSection } from "@/components/home/advanced-features-section";
+import { Footer } from "@/components/home/footer";
 
 export const metadata: Metadata = {
   title: "Classdesk Features - Complete College Management System for NAAC & NBA",
@@ -40,6 +41,8 @@ export default function FeaturesPage() {
       <main className="relative z-10 text-gray-900 dark:text-white">
         <AdvancedFeaturesSection />
       </main>
+
+      <Footer />
     </div>
   );
 }

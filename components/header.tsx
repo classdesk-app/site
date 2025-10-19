@@ -69,7 +69,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-gray-700 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="text-sm font-medium text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white/90 transition-colors"
               >
                 {item.name}
               </Link>
@@ -84,7 +84,7 @@ export function Header() {
             className="flex items-center gap-4 ml-6"
           >
             <ThemeToggle />
-            <Button asChild size="sm" className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white hidden sm:flex">
+            <Button asChild size="sm" className="rounded-lg bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 hidden sm:flex">
               <a href="#waitlist">Join Waitlist</a>
             </Button>
             
@@ -117,13 +117,13 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block text-sm font-medium text-gray-700 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                  className="block text-sm font-medium text-gray-700 dark:text-white hover:text-gray-900 dark:hover:text-white/90 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button asChild size="sm" className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white w-full">
+              <Button asChild size="sm" className="rounded-lg bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 w-full">
                 <a href="#waitlist" onClick={() => setMobileMenuOpen(false)}>Join Waitlist</a>
               </Button>
             </div>

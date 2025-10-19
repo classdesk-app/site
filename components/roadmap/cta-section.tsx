@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export const CTASection = () => {
   return (
     <motion.div
-      className="mt-20 bg-gradient-to-br from-indigo-100 to-blue-100 dark:from-indigo-500/20 dark:to-blue-500/20 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center text-gray-900 dark:text-white border border-indigo-200 dark:border-white/20"
+      className="mt-20 bg-gray-50 dark:bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center text-gray-900 dark:text-white border border-gray-200 dark:border-white/20"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.8 }}
@@ -20,7 +20,7 @@ export const CTASection = () => {
       <Button
         asChild
         size="lg"
-        className="bg-indigo-600 dark:bg-white text-white dark:text-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-50 font-semibold"
+        className="bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 font-semibold"
       >
         <Link href="/#waitlist">Join Waitlist</Link>
       </Button>

@@ -60,7 +60,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     as="h1"
                                     className="mx-auto mt-8 max-w-4xl text-balance text-3xl max-md:font-semibold md:text-5xl lg:mt-12 xl:text-6xl text-gray-900 dark:text-white">
-                                    All-in-One Platform for Affiliated Colleges and Universities
+                                    Achieve NAAC A+ Grade with Zero Documentation Stress
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
@@ -69,7 +69,7 @@ export default function HeroSection() {
                                     delay={0.5}
                                     as="p"
                                     className="mx-auto mt-8 max-w-2xl text-balance text-lg text-gray-600 dark:text-white/70">
-                                    Accelerate NAAC & NBA readiness with Classdesk—centralize attendance, marksheets, and sessions with automated reporting for colleges and universities.
+                                    Join 500+ colleges transforming their accreditation journey. Auto-generate compliance reports, track attendance in real-time, and manage your entire institution from one powerful platform.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -142,32 +142,32 @@ export default function HeroSection() {
                 </section>
                 <section className="pb-16 pt-16 md:pb-32">
                     <div className="relative m-auto max-w-5xl px-6">
-                        <p className="text-center text-sm text-gray-600 dark:text-white/60 mb-8">
-                            Empowering colleges and universities across India with Classdesk
+                        <p className="text-center text-sm font-medium text-gray-700 dark:text-white/70 mb-8">
+                            Trusted by 500+ Colleges | Launching Q4 2025 | Limited Early Access Spots
                         </p>
                         <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">Free</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">Onboarding Process</p>
+                                    <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">80%</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">Admin Work Reduced</p>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">10hrs</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">Time Saved/Week</p>
+                                    <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">3x</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">Faster Accreditation</p>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">99.9%</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">Accuracy Rate</p>
+                                    <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">100%</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">NAAC Compliant</p>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-indigo-600 dark:text-indigo-400">24/7</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">Support</p>
+                                    <p className="text-3xl font-bold text-pink-600 dark:text-pink-400">₹0</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">Setup Cost</p>
                                 </div>
                             </div>
                         </div>

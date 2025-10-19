@@ -6,7 +6,7 @@ export const Background = () => {
         className="absolute inset-0 z-0 dark:block hidden"
         style={{
           background: `
-            radial-gradient(ellipse 100% 20% at 50% 0%, rgba(123, 76, 232, 0.24), transparent 50%),
+            radial-gradient(ellipse 100% 20% at 50% 0%, rgba(249, 115, 22, 0.18), transparent 50%),
 rgba(2, 6, 23, 0.63)
           `,
         }}
