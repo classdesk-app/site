@@ -16,13 +16,13 @@ export const WaitlistSection = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-              Join 500+ Colleges Already Waiting
+              Be Among the First to Experience Classdesk
             </h2>
             <p className="text-lg md:text-xl text-gray-600 dark:text-white/70 mb-2">
-              <strong className="text-gray-900 dark:text-white">🎁 Limited Offer:</strong> First 100 colleges get 6 months premium FREE
+              <strong className="text-gray-900 dark:text-white">🎁 Early Access Offer:</strong> First 100 colleges get 6 months premium FREE
             </p>
             <p className="text-sm text-gray-600 dark:text-white/60 mb-8">
-              ⚡ Launching Q4 2025 | Spots filling fast | Priority onboarding for early signups
+              ⚡ Launching Q4 2025 | Limited spots available | Priority onboarding for early signups
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">

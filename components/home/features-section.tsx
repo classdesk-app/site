@@ -23,8 +23,8 @@ export const FeaturesSection = () => {
             Stop Drowning in Paperwork. Start Leading with Data.
           </h2>
           <p className="text-lg text-gray-600 dark:text-white/70 max-w-2xl mx-auto">
-            Say goodbye to manual attendance registers, scattered Excel sheets, and last-minute accreditation panic. 
-            Classdesk automates your entire college operations—so you can focus on what matters: education excellence.
+            Say goodbye to manual attendance registers, scattered Excel sheets, and endless report compilation. 
+            Classdesk streamlines your daily college operations—so you can focus on what matters: education excellence.
           </p>
         </motion.div>
 
@@ -109,8 +109,8 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">End Attendance Chaos Forever</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">No more manual registers or calculation errors. One-click attendance that auto-generates NAAC-ready reports. Faculty saves 2+ hours daily.</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Attendance Management</h3>
+              <p className="text-sm text-gray-600 dark:text-white/60">No more manual registers or calculation errors. One-click attendance tracking with automated reports and analytics. Save hours of administrative work daily.</p>
             </div>
           </motion.div>
 
@@ -153,8 +153,8 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Grade Cards in Minutes, Not Days</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Auto-calculate grades, detect errors instantly, and generate NBA-compliant marksheets for thousands of students with zero manual work.</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Grade Management System</h3>
+              <p className="text-sm text-gray-600 dark:text-white/60">Auto-calculate grades, detect errors instantly, and generate professional marksheets for thousands of students with zero manual work.</p>
             </div>
           </motion.div>
 
@@ -199,7 +199,7 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Timetables That Actually Work</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Timetable Scheduling</h3>
               <p className="text-sm text-gray-600 dark:text-white/60">Smart conflict detection, automatic room allocation, and faculty coordination. Plan entire semesters in hours, not weeks.</p>
             </div>
           </motion.div>
@@ -248,8 +248,8 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Data That Drives Decisions</h3>
-              <p className="text-sm text-gray-600 dark:text-white/60">Real-time dashboards show exactly what&apos;s working and what&apos;s not. Identify at-risk students early and boost your institution&apos;s performance metrics.</p>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Analytics & Reporting</h3>
+              <p className="text-sm text-gray-600 dark:text-white/60">Real-time dashboards show exactly what&apos;s working and what&apos;s not. Identify at-risk students early, track performance trends, and make informed decisions to improve outcomes.</p>
             </div>
           </motion.div>
 
@@ -354,7 +354,7 @@ export const FeaturesSection = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Bank-Level Security Built-In</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Access Control Management</h3>
               <p className="text-sm text-gray-600 dark:text-white/60">Control who sees what with role-based permissions. Protect sensitive student data while giving everyone the access they need.</p>
             </div>
           </motion.div>

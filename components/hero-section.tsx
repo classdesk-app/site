@@ -60,7 +60,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     as="h1"
                                     className="mx-auto mt-8 max-w-4xl text-balance text-3xl max-md:font-semibold md:text-5xl lg:mt-12 xl:text-6xl text-gray-900 dark:text-white">
-                                    Achieve NAAC A+ Grade with Zero Documentation Stress
+                                    Simplify College Operations - Attendance, Marks & Communication in One Place
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
@@ -69,7 +69,7 @@ export default function HeroSection() {
                                     delay={0.5}
                                     as="p"
                                     className="mx-auto mt-8 max-w-2xl text-balance text-lg text-gray-600 dark:text-white/70">
-                                    Join 500+ colleges transforming their accreditation journey. Auto-generate compliance reports, track attendance in real-time, and manage your entire institution from one powerful platform.
+                                    Track attendance in real-time, generate marks & grade reports instantly, schedule timetables effortlessly, and keep parents informed - all from one streamlined platform built for educators.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -143,31 +143,31 @@ export default function HeroSection() {
                 <section className="pb-16 pt-16 md:pb-32">
                     <div className="relative m-auto max-w-5xl px-6">
                         <p className="text-center text-sm font-medium text-gray-700 dark:text-white/70 mb-8">
-                            Trusted by 500+ Colleges | Launching Q4 2025 | Limited Early Access Spots
+                            Beta Launch Q4 2025 | Join the Waitlist for Early Access
                         </p>
                         <div className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">80%</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">Admin Work Reduced</p>
+                                    <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">✓</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">Attendance Tracking</p>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">3x</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">Faster Accreditation</p>
+                                    <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">✓</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">Marks Management</p>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">100%</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">NAAC Compliant</p>
+                                    <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">✓</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">Timetable Scheduling</p>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center">
                                 <div className="text-center">
-                                    <p className="text-3xl font-bold text-pink-600 dark:text-pink-400">₹0</p>
-                                    <p className="text-sm text-gray-600 dark:text-white/60">Setup Cost</p>
+                                    <p className="text-3xl font-bold text-pink-600 dark:text-pink-400">✓</p>
+                                    <p className="text-sm text-gray-600 dark:text-white/60">Parent Communication</p>
                                 </div>
                             </div>
                         </div>

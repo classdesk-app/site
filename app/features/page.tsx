@@ -4,15 +4,16 @@ import { AdvancedFeaturesSection } from "@/components/home/advanced-features-sec
 import { Footer } from "@/components/home/footer";
 
 export const metadata: Metadata = {
-  title: "Classdesk Features - Complete College Management System for NAAC & NBA",
-  description: "Explore Classdesk's comprehensive features: attendance management, marksheet generation, session planning, analytics, and role management for NAAC & NBA accreditation.",
+  title: "Classdesk Features - Simplified College Management System",
+  description: "Explore Classdesk's comprehensive features: attendance management, marksheet generation, timetable scheduling, parent communication, analytics, and role management for streamlined operations.",
   keywords: [
     "classdesk features",
     "college management system features",
-    "NAAC accreditation software features",
-    "NBA accreditation platform features",
+    "school management system features",
     "attendance management system",
     "marksheet generation software",
+    "timetable scheduling software",
+    "parent communication system",
     "academic session planning",
     "college analytics dashboard",
     "university ERP features",
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
     "educational technology features"
   ],
   openGraph: {
-    title: "Classdesk Features - Complete College Management System",
-    description: "Discover all the powerful features that make Classdesk the ideal solution for college management and accreditation.",
+    title: "Classdesk Features - Simplified College Management System",
+    description: "Discover all the powerful features that make Classdesk the ideal solution for streamlined college management and daily operations.",
     url: "https://classdesk.app/features",
     type: "website",
   },

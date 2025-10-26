@@ -1,11 +1,11 @@
 {
   "name": "Classdesk - College Management System",
   "short_name": "Classdesk",
-  "description": "Complete college management system for NAAC & NBA accreditation process. Manage attendance, marksheets, sessions, and university administration.",
+  "description": "Simplified college management system for attendance, marks, timetables, and parent communication. Streamline your daily operations.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#4f46e5",
+  "theme_color": "#F97316",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-IN",

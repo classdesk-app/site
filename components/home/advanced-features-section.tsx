@@ -122,24 +122,24 @@ export const AdvancedFeaturesSection = () => {
     {
       icon: Users,
       title: "Attendance Tracking",
-      description: "Efficient attendance management system with real-time tracking and automated reporting for NAAC compliance.",
+      description: "Efficient attendance management system with real-time tracking and automated reporting for streamlined administration.",
       color: "from-violet-500 to-purple-500",
       features: [
         "Quick attendance marking",
         "Automated report generation",
-        "NAAC compliance documentation",
-        "Faculty dashboard with insights"
+        "Real-time analytics and insights",
+        "Faculty dashboard with trends"
       ]
     },
     {
       icon: FileText,
       title: "Marksheet Generation",
-      description: "Streamlined marksheet creation with built-in validation and NBA accreditation compliance.",
+      description: "Streamlined marksheet creation with built-in validation, error detection, and professional formatting.",
       color: "from-pink-500 to-rose-500",
       features: [
         "Automated grade calculation",
         "Digital marksheet generation",
-        "NBA compliance features",
+        "Error detection and validation",
         "Bulk export capabilities"
       ]
     },
