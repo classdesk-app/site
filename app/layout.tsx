@@ -4,8 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
-import { usePageViewTracker } from "@/components/hooks/use-page-view-tracker";
-import Script from "next/script";
+import { PageViewTracker } from "@/components/page-view-tracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -302,7 +301,6 @@ export default function RootLayout({
       }
     ]
   };
-  const { src, onLoad } = usePageViewTracker();
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -328,12 +326,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Analytics Script */}
-        <script src={src} async defer onLoad={onLoad} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
+        <PageViewTracker />
         <ThemeProvider>
           <Header />
           {children}
