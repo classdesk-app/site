@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/header";
+import { AnalyticsScript } from "@/components/analytics-script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -325,6 +326,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <AnalyticsScript />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
