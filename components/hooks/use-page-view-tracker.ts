@@ -19,6 +19,7 @@ export function usePageViewTracker() {
                 typeof win.trackingFunctions?.onLoad === "function"
             ) {
                 win.trackingFunctions.onLoad({ appId });
+                console.log("Tracking functions loaded");
             } else {
                 console.error("Tracking functions not found");
             }
