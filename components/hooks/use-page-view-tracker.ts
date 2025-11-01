@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 
 export function usePageViewTracker() {
-    const appId = "6905b1f0d2326f0019f5a265";
+    const appId = "6905c0e33e2f49000de1923e";
     const nocache = useMemo(() => Math.random().toString(36).substring(7), []);
     const src = `https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=${nocache}`;
 
